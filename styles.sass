@@ -3,12 +3,13 @@ body
     margin: 0 auto
     min-width: 920px
     font-family: Geneva, Arial, Helvetica, sans-serif
+
 .col
     width: 31%
     float: left
     margin: 0 10px
     box-sizing: border-box
-    .media-item
+    .post-card
         width: 100%
         margin:  20px 0
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
@@ -44,3 +45,19 @@ body
         
 .img-round
     border-radius: 50%
+
+@media (max-width: 920px)
+    body
+        width: 80%
+        min-width: 580px
+    .col
+        width: 46%
+
+@media (max-width: 580px)
+    body
+        width: 85%
+        min-width: 300px
+    .col
+        width: 100%
+        margin: 0
+  
