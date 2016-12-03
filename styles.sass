@@ -1,2 +1,46 @@
+body
+    width: 75%
+    margin: 0 auto
+    min-width: 920px
+    font-family: Geneva, Arial, Helvetica, sans-serif
 .col
-    width: 33%
+    width: 31%
+    float: left
+    margin: 0 10px
+    box-sizing: border-box
+    .media-item
+        width: 100%
+        margin:  20px 0
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+        overflow: hidden
+        &__header
+            padding: 15px
+            .img-profile
+                width: 20%
+                display: inline-block
+                vertical-align: middle
+            .username-location
+                width: 57.5%
+                padding-left: 10px
+                box-sizing: border-box
+                display: inline-block
+                vertical-align: middle
+                .username
+                    font-weight: 700
+            .time-ago
+                width: 22.5%
+                text-align: right
+                display: inline-block
+                vertical-align: middle
+        &__picture
+            .img-post
+                width: 100%
+        &__likes
+            padding: 15px 15px 0
+            .heart
+                cursor: pointer
+        &__description
+            padding: 15px
+        
+.img-round
+    border-radius: 50%
