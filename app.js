@@ -5,9 +5,11 @@ const globalSettings = {
     'queryParams': {
         'count': 20
     },
-    colCount: 3,
-    widthLarge: 920,
-    widthMedium: 580
+    display: {
+        colCount: 3,
+        widthLarge: 920,
+        widthMedium: 580
+    }
 };
 
 const recentPosts = [];
@@ -177,14 +179,14 @@ function createBasicStructure(colCount) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth < globalSettings.widthMedium) {
-        globalSettings.colCount = 1;
-    } else if (window.innerWidth < globalSettings.widthLarge) {
-        globalSettings.colCount = 2;
+    if (window.innerWidth < globalSettings.display.widthMedium) {
+        globalSettings.display.colCount = 1;
+    } else if (window.innerWidth < globalSettings.display.widthLarge) {
+        globalSettings.display.colCount = 2;
     } else {
-        globalSettings.colCount = 3;
+        globalSettings.display.colCount = 3;
     }
-    createBasicStructure(globalSettings.colCount);
+    createBasicStructure(globalSettings.display.colCount);
 
     const user = new User(691623);
     const src = user.getRecentMediaUrl(globalSettings);
@@ -194,22 +196,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth < globalSettings.widthMedium) {
-        if (globalSettings.colCount !== 1) {
-            globalSettings.colCount = 1;
-            createBasicStructure(globalSettings.colCount);
+    if (window.innerWidth < globalSettings.display.widthMedium) {
+        if (globalSettings.display.colCount !== 1) {
+            globalSettings.display.colCount = 1;
+            createBasicStructure(globalSettings.display.colCount);
             displayRecentMedia();
         }
-    } else if (window.innerWidth < globalSettings.widthLarge) {
-        if (globalSettings.colCount !== 2) {
-            globalSettings.colCount = 2;
-            createBasicStructure(globalSettings.colCount);
+    } else if (window.innerWidth < globalSettings.display.widthLarge) {
+        if (globalSettings.display.colCount !== 2) {
+            globalSettings.display.colCount = 2;
+            createBasicStructure(globalSettings.display.colCount);
             displayRecentMedia();
         }
     } else {
-        if (globalSettings.colCount !== 3) {
-            globalSettings.colCount = 3;
-            createBasicStructure(globalSettings.colCount);
+        if (globalSettings.display.colCount !== 3) {
+            globalSettings.display.colCount = 3;
+            createBasicStructure(globalSettings.display.colCount);
             displayRecentMedia();
         }
     }
